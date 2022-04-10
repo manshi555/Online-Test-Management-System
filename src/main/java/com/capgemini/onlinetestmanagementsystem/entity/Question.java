@@ -2,14 +2,38 @@ package com.capgemini.onlinetestmanagementsystem.entity;
 
 import java.util.Arrays;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="questions")
 public class Question {
 	
+	@Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name="questionId")
 	private int questionId;
+	
+	@Column(name="questionTitle")
 	private String questionTitle;
+	
+	@Column(name="questionAnswer")
 	private int questionAnswer;
-	private double questionMarks;
+	
+	@Column(name="questionMarks")
+	private int questionMarks;
+	
+	@Column(name="chosenAnswer")
 	private int chosenAnswer;
-	private double markScored;
+	
+	@Column(name="markScored")
+	private int markScored;
+	
+	@Column(name="questionOptions")
 	private String [] questionOptions;
 	
 	public Question()
@@ -45,7 +69,7 @@ public class Question {
 		return questionMarks;
 	}
 	
-	public void setQuestionMarks(double questionMarks) {
+	public void setQuestionMarks(int questionMarks) {
 		this.questionMarks = questionMarks;
 	}
 	
@@ -61,7 +85,7 @@ public class Question {
 		return markScored;
 	}
 	
-	public void setMarkScored(double markScored) {
+	public void setMarkScored(int markScored) {
 		this.markScored = markScored;
 	}
 	
