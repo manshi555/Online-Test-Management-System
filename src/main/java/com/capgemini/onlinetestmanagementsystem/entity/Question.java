@@ -12,7 +12,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="questions")
 public class Question {
-	
+	//need to correct
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="questionId")
